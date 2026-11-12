@@ -8,11 +8,14 @@
 #define RADIO_TIERRA 6371000.0       // m
 #define DISTANCIA_TIERRA_LUNA 384000000.0 // m
 
-// Estrategia de Representacion de Entidades Espaciales
+// Representacion de Entidades Espaciales
 typedef struct {
     double masa_nave;           // kg
     double v_tli;                   // m/s
     double altitud_leo;             // m
+
+    double velocidad_tramos[10];
+    double distancias_tramos[10];
 } MisionTranslunar;
 
 //funciones de simulacion y calculo 
