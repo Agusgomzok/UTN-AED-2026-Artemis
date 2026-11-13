@@ -10,7 +10,7 @@
 
 // Representacion de Entidades Espaciales
 typedef struct {
-    double masa_nave;           // kg
+    double masa_nave;               // kg
     double v_tli;                   // m/s
     double altitud_leo;             // m
 
@@ -23,6 +23,6 @@ double calcular_energia_cinetica(double masa, double velocidad);
 double calcular_trabajo_especifico_equilibrio(double altitud_leo);
 void explicar_ley_inercia(void);
 void explicar_diferencia_combustible(void);
-void ejecutar_simulacion_escenario3(const MisionTranslunar* mision);
+void ejecutar_simulacion_escenario3(MisionTranslunar* mision);
 
 #endif // SIMULADOR_H
