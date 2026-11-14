@@ -6,11 +6,19 @@ LDFLAGS = -lm
 # Carpetas y Archivos
 SRC_DIR = src
 OBJ_DIR = build
-EXEC = artemis_sim
-
-# Fuentes y Objetos
 SRCS = $(wildcard $(SRC_DIR)/*.c)
 OBJS = $(patsubst $(SRC_DIR)/%.c, $(OBJ_DIR)/%.o, $(SRCS))
+
+# Detección de Sistema Operativo (Windows vs Linux/Mac)
+ifeq ($(OS),Windows_NT)
+    EXEC = artemis_sim.exe
+    MKDIR = if not exist $(OBJ_DIR) mkdir $(OBJ_DIR)
+    CLEAN = if exist $(OBJ_DIR) rmdir /s /q $(OBJ_DIR) & if exist $(EXEC) del /f /q $(EXEC)
+else
+    EXEC = artemis_sim
+    MKDIR = mkdir -p $(OBJ_DIR)
+    CLEAN = rm -rf $(OBJ_DIR) $(EXEC)
+endif
 
 # Regla principal
 all: $(EXEC)
@@ -21,11 +29,11 @@ $(EXEC): $(OBJS)
 
 # Regla para compilar los .c en .o
 $(OBJ_DIR)/%.o: $(SRC_DIR)/%.c
-	@mkdir -p $(OBJ_DIR)
+	@$(MKDIR)
 	$(CC) $(CFLAGS) -c $< -o $@
 
 # Regla para limpiar los compilados
 clean:
-	rm -rf $(OBJ_DIR) $(EXEC) $(EXEC).exe
+	$(CLEAN)
 
 .PHONY: all clean
