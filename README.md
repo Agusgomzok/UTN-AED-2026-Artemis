@@ -33,7 +33,7 @@ Abra el **Símbolo del sistema (CMD)** en la carpeta raíz del repositorio y eje
 ```cmd
 mingw32-make
 Ejecucion: .\artemis_sim.exe
-
+```
 ## Uso de Inteligencia Artificial como Herramienta de Apoyo
 En cumplimiento con las pautas de transparencia de la cátedra, se detallan las consultas puntuales realizadas a herramientas de IA durante el desarrollo, utilizadas exclusivamente como soporte teórico y de depuración:
 
