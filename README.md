@@ -25,7 +25,7 @@ El proyecto está estructurado de forma modular separando interfaces (`.h`) de i
 │   ├── simulador.c    (Ecuaciones físicas y reporte)
 │   └── validaciones.c (Filtrado de input, limpieza de buffer)
 └── Makefile           (Script de compilación)
-
+```
 ## Instrucciones de Compilación y Ejecución
 Desde la carpeta raíz del repositorio:
 
@@ -37,3 +37,13 @@ make
 # Opción 2: Compilación directa con GCC
 gcc -Wall -Wextra -Iinclude src/main.c src/simulador.c src/validaciones.c -lm -o artemis_sim
 ./artemis_sim
+```
+
+## Uso de Inteligencia Artificial como Herramienta de Apoyo
+En cumplimiento con las pautas de transparencia de la cátedra, se detallan las consultas puntuales realizadas a herramientas de IA durante el desarrollo, utilizadas exclusivamente como soporte teórico y de depuración:
+
+| Integrante | Herramienta | Consulta / Apoyo Puntual | Validación y Trabajo Propio |
+| :--- | :--- | :--- | :--- |
+| **Gomez, Agustin Ivan** | ChatGPT / Gemini | Verificación de convenciones de tipos `double` y formato exponencial (`%e`) en C para constantes astronómicas. | Desarrollo integral del modelo físico, despeje de ecuaciones de conservación de energía y pruebas de telemetría por tramos. |
+| **Lopez, Andres Maximiliano** | Gemini | Consulta sobre el comportamiento del búfer `stdin` tras fallos de lectura con `scanf` y buenas prácticas en cabeceras `.h`. | Diseño e implementación de las funciones de validación de tipos/rangos y ejecución de pruebas de estrés con entradas inválidas. |
+| **Fernandez, Lautaro Alejandro** | ChatGPT / Gemini | Resolución de errores de sintaxis en reglas de compilación modular (`Makefile`) y enlaces con `-lm`. | Diseño del menú principal, estructuración de `MisionTranslunar`, integración de los módulos y control de versiones en GitHub. |
