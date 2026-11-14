@@ -27,17 +27,21 @@ El proyecto está estructurado de forma modular separando interfaces (`.h`) de i
 └── Makefile           (Script de compilación)
 ```
 ## Instrucciones de Compilación y Ejecución
-Desde la carpeta raíz del repositorio:
+Abra una terminal en la carpeta raíz del repositorio y ejecute los comandos correspondientes a su sistema:
 
+### En Windows (CMD o PowerShell)
+```powershell
+mingw32-make
+.\artemis_sim.exe
+```
+
+### En Linux, macOS o Git Bash (Windows)
 ```bash
-# Opción 1: Utilizando Makefile (Linux/Mac) o mingw32-make (Windows)
 make
 ./artemis_sim
-
-# Opción 2: Compilación directa con GCC
-gcc -Wall -Wextra -Iinclude src/main.c src/simulador.c src/validaciones.c -lm -o artemis_sim
-./artemis_sim
 ```
+*(Nota: Si utiliza Git Bash en Windows con MinGW, utilice `mingw32-make` en lugar de `make`).*
+
 
 ## Uso de Inteligencia Artificial como Herramienta de Apoyo
 En cumplimiento con las pautas de transparencia de la cátedra, se detallan las consultas puntuales realizadas a herramientas de IA durante el desarrollo, utilizadas exclusivamente como soporte teórico y de depuración:
