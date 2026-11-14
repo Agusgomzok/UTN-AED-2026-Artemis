@@ -3,7 +3,7 @@
 #include "validaciones.h"
 #include "simulador.h"
 
-void mostrar_menu() {
+void mostrar_menu(void) {
     printf("\n======================================================\n");
     printf("   SIMULADOR ARTEMIS - ESCENARIO 3: TLI E INERCIA\n");
     printf("======================================================\n");
@@ -15,7 +15,7 @@ void mostrar_menu() {
     printf("======================================================\n");
 }
 
-int main() {
+int main(void) {
     int opcion;
     double trabajo_calculado;
     
@@ -23,7 +23,9 @@ int main() {
     MisionTranslunar mision_actual = {
         .masa_nave = 26000.0, 
         .v_tli = 10900.0, 
-        .altitud_leo = 192000.0
+        .altitud_leo = 192000.0,
+        .velocidades_tramos = {0.0},
+        .distancias_tramos = {0.0}
     };
 
     do {
@@ -33,6 +35,9 @@ int main() {
         switch (opcion) {
             case 1:
                 printf("\n--- EJECUTANDO SIMULACION OFICIAL ---\n");
+                mision_actual.masa_nave = 26000.0;
+                mision_actual.v_tli = 10900.0;
+                mision_actual.altitud_leo = 192000.0;
                 ejecutar_simulacion_escenario3(&mision_actual);
                 pausar_consola();
                 break;
@@ -64,7 +69,7 @@ int main() {
                 break;
                 
             case 5:
-                printf("\nSaliendo del simulador. ¡Mision abortada con exito!\n");
+                printf("\nSaliendo del simulador. ¡Mision finalizada!\n");
                 break;
         }
     } while (opcion != 5);

@@ -14,7 +14,7 @@ typedef struct {
     double v_tli;                   // m/s
     double altitud_leo;             // m
 
-    double velocidad_tramos[10];
+    double velocidades_tramos[10];
     double distancias_tramos[10];
 } MisionTranslunar;
 
